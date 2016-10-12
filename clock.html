@@ -1,0 +1,39 @@
+<script type="text/javascript">
+function startTime()
+{
+var today=new Date()
+var h=today.getHours()
+var m=today.getMinutes()
+var s=today.getSeconds()
+var time="AM";
+if(h==0)
+ h=12;
+if(h>11)
+time="PM";
+  if(h>12)
+  h=h-12;
+
+
+m=checkTime(m)
+s=checkTime(s)
+
+document.getElementById('clock').innerHTML=h+":"+m+":"+s+" "+time
+t=setTimeout('startTime()', 500)
+}
+
+function checkTime(i)
+{
+if (i<10)
+{ i="0" + i}
+return i
+}
+
+window.onload=startTime;
+
+</script>
+<div id="clock"
+ style="font-size:35px;
+color:red;
+border:3px groove blue;
+background-color:#aaffaa; 
+width:200px; height:40px"></div>
