@@ -1,0 +1,14 @@
+p {
+	background-color:yellow;
+	text-align:center;
+	font-size:15px;
+}
+
+.italic {
+	font-style:italic;
+	font-size:20px;
+	font-family: "Times New Roman", Times, serif;
+	background-color:lightblue;
+	text-align:right;
+
+}

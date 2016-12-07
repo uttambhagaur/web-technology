@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Change background</title>
+	<style type="text/css">
+	#time {
+		display: inline-block;
+		color:red;
+		background-color:lightblue;
+		font-family:DejaVuSansMono;
+		font-size:30px;
+	}
+	</style>
+<script>
+var c_index = 0
+var c_array = ["red","blue","lightblue","orange","pink"]
+function change_color()
+{
+	document.bgColor=c_array[c_index]
+	c_index=(c_index+1)%c_array.length
+}
+</script>
+<body>
+<p id="time">--Click the button to change background.--</p><br>
+<input type="button" value="Change" onclick="change_color()">
+</body>
+</html>

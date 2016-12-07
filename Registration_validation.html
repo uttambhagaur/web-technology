@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>Registrartion form</title>
+</head>
+<body>
+	
+<form method="get" name="reg_form">
+<table align="center" border="2" cellpadding="1" cellspacing="1" style="width:500px">
+	<caption>Registration Form</caption>
+	<tbody>
+		<tr>
+			<td style="background-color: lightblue;">Name</td>
+			<td style="width:35px"><input id="i_name" size="35" type="text" /></td>
+		</tr>
+		<tr>
+			<td style="background-color: lightblue;">Email</td>
+			<td style="width:35px"><input id="i_email" size="35" type="text" /></td>
+		</tr>
+		<tr>
+			<td style="background-color: lightblue;">Contact No.</td>
+			<td align="right" style="width:35px">+91<input id="con" maxlength="10" size="10" type="text" /></td>
+		</tr>
+		<tr>
+			<td style="background-color: lightblue;">Father&#39;s Name</td>
+			<td><input id="fa_name" size="35" type="text" /></td>
+		</tr>
+		<tr>
+			<td style="background-color: lightblue;">Mother&#39;s Name</td>
+			<td><input id="mo_name" size="35" type="text" /></td>
+		</tr>
+		<tr>
+			<td style="background-color: lightblue;">Address</td>
+			<td><textarea cols="45" id="address" rows="5"></textarea></td>
+		</tr>
+		<tr>
+			<td style="background-color: lightblue;">Gender</td>
+			<td><input checked="checked" name="gender" type="radio" value="male" />male<input name="gender" type="radio" value="female" />female</td>
+		</tr>
+		<tr>
+			<td style="background-color: lightblue;">Select course</td>
+			<td>
+				<select name="course_drop">
+				<option value="btech">B.Tech</option>
+				<option value="mtech">M.Tech</option>
+				<option value="bpharm">B.Pharma</option>
+				<option value="mpharm">M.Pharma</option>
+				<option value="mphil">M.Phil</option>
+				<option value="dphil">D.Phil</option>
+				</select>
+			
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color: lightblue;">Qualification</td>
+			<td><input checked="checked" name="qual" type="checkbox" value="high_school" />High School<input name="qual" type="checkbox" value="undergraduate" />U.Graduate<input name="qual" type="checkbox" value="graduate" />Graduate</td>
+		</tr>
+		<tr>
+			<td style="background-color: lightblue;">About Yourself</td>
+			<td><textarea cols="45" rows="8"></textarea></td>
+		</tr>
+		<tr>
+			<td align="right" colspan="2"><input value="Submit" type="button" onclick="validate()"</td>
+		</tr>
+	</tbody>
+</table>
+</form>
+
+<script>
+	function v_email()
+	{
+		var x=document.getElementById("i_email").value
+		var at=x.indexOf("@");
+		var dot=x.indexOf(".");
+		if(at<1||dot<at+2||dot+2>=x.length)
+			return false
+		return true
+	}
+	function v_name()
+	{
+		var i=0;
+		if(document.getElementById("i_name").value.length==0 ||
+		   document.getElementById("fa_name").value.length==0||
+		   document.getElementById("mo_name").value.length==0||
+		   document.getElementById("address").value.length==0 )
+			   return false
+		for(i=0;i<=9;i++)
+			if(document.getElementById("i_name").value.indexOf(i)>=0 ||
+			   document.getElementById("fa_name").value.indexOf(i)>=0||
+			   document.getElementById("mo_name").value.indexOf(i)>=0 )
+			   return false
+		return true
+	}
+	function v_contact()
+	{
+		if(document.getElementById("con").value.length!=10)
+			return false
+		return true
+	}
+	function validate()
+	{
+		if(!(v_email() && v_name() && v_contact()))
+			alert("You have entered invaled details.")
+		else 
+			alert("!!!!!!Congratulations!!!!!!\nYou have been registered.")
+	}
+</script>
+</body>
+</html>

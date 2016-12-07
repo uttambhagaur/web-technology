@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+  <student>
+    <name>Amy Pohler</name>
+    <percentage>70</percentage>
+    </student>
+<student>
+    <name>Tina Fey</name>
+    <percentage>80</percentage>
+    </student>
+<student>
+    <name>Seth Rogen</name>
+    <percentage>90</percentage>
+    </student>
+<student>
+    <name>James Franco</name>
+    <percentage>40</percentage>
+    </student>
+<student>
+    <name>Mark Hammil</name>
+    <percentage>58</percentage>
+    </student>
+</class>

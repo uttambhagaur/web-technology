@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Change background</title>
+<style>
+p {
+	font-family:Monospace;
+	font-size:18px;
+}
+</style>
+<script>
+var c_index = 0
+var c_array = ["red","blue","lightblue","orange","pink"]
+function change_color()
+{
+	var r = parseInt(document.getElementById("red").value) % 256
+	var g = parseInt(document.getElementById("green").value) % 256
+	var b = parseInt(document.getElementById("blue").value) % 256
+	document.body.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+}
+</script>
+<body>
+<p>--Input the intensity values for RGB components.--<br><br>
+RED**: <input type="text" id="red"><br>
+GREEN: <input type="text" id="green"><br>
+BLUE*: <input type="text" id="blue"><br> 
+</p>
+<input type="button" value="Change" onclick="change_color()">
+</body>
+</html>

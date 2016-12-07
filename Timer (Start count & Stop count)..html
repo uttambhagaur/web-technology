@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>My Stop Watch</title>
+	<style type="text/css">
+	#time {
+		display: inline-block;
+		color:red;
+		background-color:lightblue;
+		font-family:DejaVuSansMono;
+		font-size:30px;
+	}
+	</style>
+<script>
+var sec = 0
+var cl_interval = null
+function clock()
+{
+	sec = sec + 1
+	var s=sec%60
+	var m=(Math.floor(sec/60))%60
+	var h=Math.floor(sec/3600)
+	document.getElementById("time").innerHTML=h+':'+m+':'+s
+}
+function start()
+{
+	cl_interval = setInterval(clock,1000)
+}
+function stop()
+{
+	if(cl_interval != null)
+	clearInterval(cl_interval)
+}
+</script>
+<body>
+<p id="time">00:00:00</p><br>
+<input type="button" value="start count" onclick="start()">
+<input type="button" value="stop count" onclick="stop()">
+</body>
+</html>

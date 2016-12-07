@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>My Digital Clock</title>
+	<style type="text/css">
+	.emphasize {
+		  font-family: DejaVuSansMono;
+		  font-style:italic;
+	}
+	#time {
+		display: inline-block;
+		color:red;
+		background-color:lightblue;
+		font-family:DejaVuSansMono;
+		font-size:30px;
+	}
+	</style>
+<script>
+function clock()
+{
+	var t= new Date()
+		var h=t.getHours()
+		var m=t.getMinutes()
+		var s=t.getSeconds()
+		document.getElementById("time").innerHTML=h+':'+m+':'+s
+}
+function start()
+{
+	setInterval(clock,1000)
+}
+</script>
+<body onload='start()'>
+	<center>
+		<p class="emphasize">--This is my Digital Clock--</p>
+		<p id="time">00:00:00</p>
+	</center>
+</body>
+</html>

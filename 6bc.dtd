@@ -1,0 +1,10 @@
+<!ELEMENT academics (d_id,course*)>
+<!ELEMENT d_id (#PCDATA)>
+<!ELEMENT course (id,student*)>
+<!ELEMENT student (rollno,name)>
+<!ELEMENT name (fname,lname)>
+<!ELEMENT rollno (#PCDATA)>
+<!ELEMENT fname (#PCDATA)>
+<!ELEMENT lname (#PCDATA)>
+<!ELEMENT id (#PCDATA)> 
+<!ATTLIST course c_id CDATA #IMPLIED>

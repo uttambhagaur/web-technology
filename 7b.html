@@ -1,0 +1,92 @@
+<html>
+<head>
+<style>
+.name {
+	background-color:lightblue;
+	height:25px;
+	width:100px;
+}
+</style>
+<title>DOM Search Example</title>
+<script>
+function MyFunction(xmlfilename) {
+	try
+	{
+		xmlDoc=new ActiveXObject(Microsoft.XMLDOM);
+	}//End of try
+	catch(e)
+	{
+		try
+		{
+			xmlDoc=document.implementation.createDocument("","",null);
+		}//End of try
+		catch(e)
+		{
+			alert(e.message);
+		}//End of catch
+	}//End of catch
+	
+	try
+	{
+		xmlDoc.async=false;
+		xmlDoc.load(xmlfilename);
+		return(xmlDoc);
+	}//End of try
+	catch(e)
+	{
+		alert(e.message);
+		return null;
+	}//End of catch
+}//End of function
+</script>
+</head>
+<body>
+<script>
+function search() {
+	var mytab = document.getElementById('tab')
+	var s_data = document.getElementById('search').value
+	//mytab.rows[0].cells[0].innerHTML=s_data
+	var f=null
+	xmlDoc=MyFunction("7ab.xml");
+	if(xmlDoc == null)
+		return
+	for(i=0;i<5;i++)
+		if(xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue == s_data)
+			f = i;
+	if(f==null) {
+		mytab.rows[0].cells[0].innerHTML=""
+		mytab.rows[0].cells[1].innerHTML=""
+	}
+	if(f!=null) {
+		mytab.rows[0].cells[0].innerHTML=(xmlDoc.getElementsByTagName("name")[f].childNodes[0].nodeValue)
+		mytab.rows[0].cells[1].innerHTML=(xmlDoc.getElementsByTagName("percentage")[f].childNodes[0].nodeValue);
+	}
+}
+</script>
+<table id="tab" border="1" cellpadding="1" cellspacing="1" style="height:150px; width:150px">
+	<tr>
+		<td class="name"></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td class="name"></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td class="name"></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td class="name"></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td class="name"></td>
+		<td></td>
+	</tr>
+</table>
+<br>
+<b>Input Name To search:</b> <input type="text" id="search">&nbsp;
+<button onclick="search()">Search_Data</button><br>
+</body>
+</html>

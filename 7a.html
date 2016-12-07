@@ -1,0 +1,92 @@
+<html>
+<head>
+<style>
+.name {
+	background-color:lightblue;
+	height:25px;
+	width:100px;
+}
+</style>
+<title>XML DOM ILLUSTRATION</title>
+<script>
+function MyFunction(xmlfilename) {
+	try
+	{
+		xmlDoc=new ActiveXObject(Microsoft.XMLDOM);
+	}//End of try
+	catch(e)
+	{
+		try
+		{
+			xmlDoc=document.implementation.createDocument("","",null);
+		}//End of try
+		catch(e)
+		{
+			alert(e.message);
+		}//End of catch
+	}//End of catch
+	
+	try
+	{
+		xmlDoc.async=false;
+		xmlDoc.load(xmlfilename);
+		return(xmlDoc);
+	}//End of try
+	catch(e)
+	{
+		alert(e.message);
+		return null;
+	}//End of catch
+}//End of function
+</script>
+</head>
+<body>
+
+<script>
+function fill(){
+	var mytab = document.getElementById('tab')
+	xmlDoc=MyFunction("7ab.xml");
+	if(xmlDoc!=null)
+	{
+		for(i=0;i<5;i++)
+		{
+			mytab.rows[i+1].cells[0].innerHTML=(xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue);
+			mytab.rows[i+1].cells[1].innerHTML=(xmlDoc.getElementsByTagName("percentage")[i].childNodes[0].nodeValue);
+		}
+	}
+	else
+	{
+		document.write("XML Document could not be loaded in memory");
+	}
+}
+</script>
+<table caption="XML DATA" align="center" id="tab" border="1" cellpadding="1" cellspacing="1" style="height:150px; width:180px">
+	<tr>
+		<th>NAME</th>
+		<th>%AGE</th>
+	</tr>
+	<tr>
+		<td class="name"></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td class="name"></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td class="name"></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td class="name"></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td class="name"></td>
+		<td></td>
+	</tr>
+</table>
+<br>
+<center><button onclick="fill()">Get My Data</button></center>
+</body>
+</html>

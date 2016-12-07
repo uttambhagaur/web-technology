@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Graphical Calculator</title>
+<style>
+	input.wide {
+		width: 100%;
+		text-align:right;
+	}
+	input.cal {
+		font-family:Monospace,Courier,DejaVuSansMonoBook;
+		margin-bottom:10px;
+		width:45px;
+	}
+</style>
+<script>
+var a=0,b=0;
+function getValue()
+{
+	a = parseInt(document.getElementById("val1").value)
+	b = parseInt(document.getElementById("val2").value)
+}
+function setValue(result)
+{
+	document.getElementById("val1").value=String(result);
+	document.getElementById("val2").value="";
+}
+function add()
+{
+	getValue();
+	setValue(a+b);
+}
+function sub()
+{
+	getValue();
+	setValue(a-b);
+}
+function mul()
+{
+	getValue();
+	setValue(a*b);
+}
+function div()
+{
+	getValue();
+	setValue(a/b);
+}
+function mod()
+{
+	getValue();
+	setValue(a%b);
+}
+function percentage()
+{
+	getValue();
+	setValue((a/b)*100);
+}
+function abs()
+{
+	getValue();
+	setValue(Math.abs(a));
+}
+function pow()
+{
+	getValue();
+	setValue(Math.pow(a,b));
+}
+</script>
+</head>
+<body>
+<p style="font-style:italic;text-align:center;">------Simple Calculator------</p>
+<div style="background-color:lightblue;width:200px;border-style:solid;margin:auto;padding:12px;" id="calculator">
+	value 1: <input class="wide" type="text" id="val1"><br>
+	value 2: <input class="wide" type="text" id="val2"><br><br>
+	<div id="button" style="text-align:justify;">
+		<input value="+" type="button" class="cal" onclick="add()">
+		<input value="-" type="button" class="cal" onclick="sub()">
+		<input value="x" type="button" class="cal" onclick="mul()">
+		<input value="/" type="button" class="cal" onclick="div()">
+		<input value="%" type="button" class="cal" onclick="mod()">
+		<input value="P" type="button" class="cal" onclick="percentage()">
+		<input value="A" type="button" class="cal" onclick="abs()">
+		<input value="^" type="button" class="cal" onclick="pow()">
+		&nbsp;
+	</div>
+</div>
+</body>
+<html>

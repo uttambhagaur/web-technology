@@ -1,0 +1,123 @@
+<?xml-stylesheet type="text/css" href="6a.css" ?>
+<!-- <!DOCTYPE academics [
+<!ELEMENT academics (d_id,course*)>
+<!ELEMENT d_id (#PCDATA)>
+<!ELEMENT course (id,student*)>
+<!ELEMENT student (rollno,name)>
+<!ELEMENT name (fname,lname)>
+<!ELEMENT rollno (#PCDATA)>
+<!ELEMENT fname (#PCDATA)>
+<!ELEMENT lname (#PCDATA)>
+<!ELEMENT id (#PCDATA)> 
+<!ATTLIST course c_id CDATA #IMPLIED>
+]> -->
+<!DOCTYPE academics SYSTEM "6bc.dtd">
+
+<academics>
+<d_id>ACADEMICS</d_id>
+<course c_id="btech">
+<id>btech</id>
+<student>
+<rollno>1</rollno>
+<name>
+<fname>Ram</fname>
+<lname>Sharma</lname>
+</name>
+</student>
+
+<student>
+<rollno>2</rollno>
+<name>
+<fname>Amy</fname>
+<lname>Pohler</lname>
+</name>
+</student>
+
+<student>
+<rollno>3</rollno>
+<name>
+<fname>Tina</fname>
+<lname>Fey</lname>
+</name>
+</student>
+
+<student>
+<rollno>4</rollno>
+<name>
+<fname>Vira</fname>
+<lname>Farmiga</lname>
+</name>
+</student>
+</course>
+
+<course c_id="mca">
+<id>mca</id>
+<student>
+<rollno>1</rollno>
+<name>
+<fname>Matt</fname>
+<lname>Damon</lname>
+</name>
+</student>
+
+<student>
+<rollno>2</rollno>
+<name>
+<fname>Anthony</fname>
+<lname>Hopkins</lname>
+</name>
+</student>
+
+<student>
+<rollno>3</rollno>
+<name>
+<fname>Leo</fname>
+<lname>Tolstoy</lname>
+</name>
+</student>
+
+<student>
+<rollno>4</rollno>
+<name>
+<fname>Austin</fname>
+<lname>Freeman</lname>
+</name>
+</student>
+</course>
+
+
+<course c_id="mtech">
+<id>mtech</id>
+<student>
+<rollno>1</rollno>
+<name>
+<fname>Jennifer</fname>
+<lname>Garnor</lname>
+</name>
+</student>
+
+<student>
+<rollno>2</rollno>
+<name>
+<fname>James</fname>
+<lname>Franco</lname>
+</name>
+</student>
+
+<student>
+<rollno>3</rollno>
+<name>
+<fname>Jack</fname>
+<lname>London</lname>
+</name>
+</student>
+
+<student>
+<rollno>4</rollno>
+<name>
+<fname>Mark</fname>
+<lname>Raffalo</lname>
+</name>
+</student>
+</course>
+</academics>

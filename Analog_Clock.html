@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <title>My Clock</title>
+    <style type="text/css">
+		
+	  p {
+		  font-family: DejaVuSansMono;
+		  font-style:italic;
+	  }	
+	  text {
+		  stroke:blue;
+	  }
+	  
+      #clock {
+        fill: lightblue;
+        stroke: black;
+        stroke-linecap: round;
+      }
+      
+      #h_hand,#dial {
+        stroke-width: 4px;
+      }
+      
+      #s_hand {
+        stroke-width: 1px;
+      }
+      
+      #m_hand {
+        stroke-width: 3px;
+      }
+      
+      #numbers {
+        font-family: DejaVuSansMono;
+        font-size: 70%;
+      }
+    </style>
+    <script language="javascript" type="text/javascript">
+      function myclock() {
+          var now = new Date();
+          var h, m, s;
+          
+          h = 30 * ((now.getHours() % 12) + now.getMinutes() / 60);
+          m = 6 * now.getMinutes();
+          s = 6 * now.getSeconds();
+          
+          document.getElementById('h_hand').setAttribute('transform', 'rotate('+ h +', 50, 50)');
+          document.getElementById('m_hand').setAttribute('transform', 'rotate(' + m + ', 50, 50)'); 
+          document.getElementById('s_hand').setAttribute('transform', 'rotate(' + s + ', 50, 50)');
+          
+          setTimeout(myclock, 1000);
+      }
+    </script>
+  </head>
+  <body onload='myclock()'>
+          <svg id='clock' viewBox='0 0 100 100' width='200' height='200'>
+            <circle id="dial" cx='50' cy='50' r='48'/>
+            <g id='numbers'>
+              <text x='42' y='16'>XII</text>
+              <text x='81' y='54'>III</text>
+              <text x='43' y='93'>VI</text>
+              <text x='7' y='54'>IX</text>
+            </g>
+            <g id='hands'>
+              <line id='h_hand' x1='50' y1='50' x2='50' y2='28' />
+              <line id='m_hand' x1='50' y1='50' x2='50' y2='18' />
+              <line id='s_hand' x1='50' y1='50' x2='50' y2='14' />
+            </g>
+          </svg>
+         <p>---This is my Analog Clock.---</p>
+  </body>
+</html>
